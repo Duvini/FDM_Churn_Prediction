@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction System</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(45deg, #f3f3f3 0%, #d1eaff 100%);
+            height: 100%;
+        }
+
+        .hero-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #4a90e2 30%, #5bc8ac 90%);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        /* Background Image is removed from this div */
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .hero-content {
+            z-index: 1;
+            color: white;
+           
+            max-width: 70%;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+            background-image: url('../static/images/d.jpeg'); /* Add your background image path here */
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay; /* Optional: Adds blend mode for gradient effect */
+        }
+
+        .hero-section h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .hero-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .hero-section button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background: #a2c217;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hero-section button:hover {
+            background: #4cae4c;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5em;
+            }
+
+            .hero-section h2 {
+                font-size: 1.5em;
+            }
+
+            .hero-section p {
+                font-size: 1em;
+                width: 90%;
+            }
+
+            .hero-section button {
+                padding: 12px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <!-- Background Image -->
+        <div class="hero-background"></div>
+        
+        
+        <!-- Content Section with Image Background -->
+        <div class="hero-content">
+            <h1>Welcome!</h1>
+            <h2>Customer Churn Prediction System</h2>
+            <p>Our system uses advanced machine learning techniques to predict customer churn and help businesses retain their valuable customers. Discover patterns in customer behavior and take proactive actions to reduce churn and increase profitability.</p>
+            <!-- "Get Started" Button -->
+            <button onclick="window.location.href='/form'">Get Started</button>
+        </div>
+    </div>
+</body>
+</html>

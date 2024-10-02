@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction</title>
+    <!-- Google Font for header -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(45deg, #e3ffe7 0%, #d9e7ff 100%);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background: #ffffff46;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            color: #4a4a4a;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333333;
+            margin: 10px 0 5px;
+        }
+
+        input,
+        select {
+            width: 70%;
+            padding: 12px 15px;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 1em;
+            color: #555555;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #5cb85c;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            width: 50%;
+            padding: 15px;
+            font-size: 1.1em;
+            background: linear-gradient(45deg, #5cb85c 30%, #4cae4c 90%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #4cae4c 30%, #5cb85c 90%);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: translateY(2px);
+        }
+
+        /* Enhanced Form Header */
+        .form-header {
+            font-family: 'Bebas Neue', sans-serif;
+            /* Apply new font */
+            font-size: 2.5em;
+            color: #ffffff;
+            text-align: center;
+
+            padding: 15px 0;
+            border-radius: 8px;
+            letter-spacing: 2px;
+            margin-bottom: 0px;
+            width: 100%;
+
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+            /* Text shadow effect */
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            input,
+            select,
+            button {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Form Header Section -->
+    <div class="form-header">Autobots<br>
+        Customer Churn Prediction System
+    </div>
+
+    <div class="container">
+        <form action="/predict" method="post">
+            <label for="customer_id">Customer ID:</label>
+            <input type="text" id="customer_id" name="customer_id" required><br><br>
+
+            <label for="purchaseDate">Purchase Date (YYYY-MM-DD):</label>
+            <input type="date" name="purchase_date" required><br><br>
+
+            <label for="productCategory">Product Category:</label>
+            <select name="product_category" required>
+                <option value="Books">Books</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Home">Home</option>
+                <option value="Other">Other</option>
+            </select><br><br>
+
+            <label for="totalPurchasedAmount">Total Purchase Amount:</label>
+            <input type="number" name="total_purchase_amount" step="0.01" required><br><br>
+
+            <label for="paymentMethod">Payment Method:</label>
+            <select name="payment_method" required>
+                <option value="Cash">Cash</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Crypto">Crypto</option>
+                <option value="PayPal">PayPal</option>
+            </select><br><br>
+
+            <label for="customerAge">Customer Age:</label>
+            <input type="number" name="customer_age" required><br><br>
+
+            <label for="returns">Returns:</label>
+            <input type="number" name="returns" required><br><br>
+
+            <label for="gender">Gender:</label>
+            <select name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select><br><br>
+
+            <button type="submit">Predict</button>
+        </form>
+
+    </div>
+</body>
+
+</html>

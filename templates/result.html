@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction Result</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Optional custom CSS for additional styles -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #4a90e2 30%, #5bc8ac 90%);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 30px 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .result-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        /* Styles for the churn status */
+        .not-churn {
+            color: #4CAF50; /* Green text */
+        }
+        .churn {
+            color: #E74C3C; /* Red text */
+        }
+        /* Animation styles */
+        .nice-animation {
+            position: relative;
+            display: inline-block;
+        }
+        .nice-animation::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 4px solid #4CAF50;
+            border-radius: 15px;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(0.9);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(0.9);
+                opacity: 1;
+            }
+        }
+        /* Button styles */
+        .btn-custom {
+            margin-top: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        .btn-custom:hover {
+            background-color: #5bc8ac;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Churn Prediction Result</h1>
+        <!-- Dynamic result text with animation if the prediction is 'Not Likely to Churn' -->
+        <div class="result-text {% if prediction == 'Not Likely to Churn' %}not-churn nice-animation{% else %}churn{% endif %}">
+            The customer is: <strong>{{ prediction }}</strong>
+        </div>
+
+        <!-- Optional message based on churn status -->
+        <p class="lead">
+            {% if prediction == 'Not Likely to Churn' %}
+                🎉 Awesome! The customer is not likely to churn. Keep providing them excellent service!
+            {% else %}
+                ⚠️ Be cautious! The customer is likely to churn. Consider taking proactive measures to retain them.
+            {% endif %}
+        </p>
+
+        <!-- Back to form button -->
+        <div>
+            <a href="/" class="btn btn-custom">Go back to the form</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
